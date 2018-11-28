@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
-require 'vendor/autoload.php';
+use Flarum\Extend;
 
-$server = new Flarum\Forum\Server(__DIR__);
-
-$server->listen();
+return [
+    // Register extenders here to customize your forum!
+];

@@ -9,10 +9,14 @@
  * file that was distributed with this source code.
  */
 
-define('FLARUM_START', microtime(true));
-
 require 'vendor/autoload.php';
 
-$server = new Flarum\Console\Server(__DIR__);
+$server = new Flarum\Console\Server(
+    Flarum\Foundation\Site::fromPaths([
+        'base' => __DIR__,
+        'public' => __DIR__.'/public',
+        'storage' => __DIR__.'/storage',
+    ])
+);
 
 $server->listen();
